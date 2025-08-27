@@ -36,17 +36,16 @@ import Github, { githubInfoLoader } from './components/Github/Github.jsx'
 // Second way to write routers in react
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path='/' element={<Layout/>}>
-      <Route index path='' element={<Home/>}/>
-      <Route path='about' element={<About/>}>
-        <Route path='prabhat' element={<User/>} />
-      </Route>
-      <Route path='contact' element={<Contact/>}/>
-      {/* <Route path='user/:userId' element={<User/>}/> */}
+    <Route path='/' element={<Layout />}>
+      <Route index path='' element={<Home />} />
+      <Route path='about' element={<About />}/>
+
+      <Route path='contact' element={<Contact />} />
+      <Route path='user/:userId' element={<User/>}/>
       <Route
-       loader= {githubInfoLoader}
-       path='github'
-       element={<Github/>}/>
+        loader={githubInfoLoader}
+        path='github'
+        element={<Github />} />
 
     </Route>
   )
